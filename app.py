@@ -52,14 +52,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-import streamlit as st
-import plotly.graph_objects as go
-
-# Create a sample Plotly graph
-import streamlit as st
-import plotly.express as px
-
-
 st.title("Why is Vietnam's traffic so scary to foreigners?")
 
 ###
