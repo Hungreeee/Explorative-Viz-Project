@@ -11,12 +11,12 @@ from streamlit_modal import Modal
 
 st.set_page_config(page_title="Why is Vietnam's traffic so scary to foreigners?", layout="wide")
 
-def open_file(file_name):
+def open_file(file_name, center=True):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(script_dir, file_name)
     with open(file_path, "r", encoding="utf8") as file:
         content = file.read()
-    return content
+    return f"<center>{content}</center>" if center else content
 
 st.markdown(
     """
@@ -42,29 +42,23 @@ st.markdown(
         font-weight: bold;
     }
 
-    #myBtn {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 30px;
-        z-index: 99;
-        font-size: 18px;
-        border: none;
-        outline: none;
-        background-color: red;
-        color: white;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 4px;
-    }
-
-    #myBtn:hover {
-        background-color: #555;
+    .svg-container, .user-select-none {
+        display: flex;
+        justify-content: center;
+        
     }
     </style>
     """,
     unsafe_allow_html=True,
 )
+
+import streamlit as st
+import plotly.graph_objects as go
+
+# Create a sample Plotly graph
+import streamlit as st
+import plotly.express as px
+
 
 st.title("Why is Vietnam's traffic so scary to foreigners?")
 
@@ -99,7 +93,7 @@ st.markdown("The processed text data is then tokenized, breaking the text into i
 
 st.markdown('A word cloud has been created based on the aggregated list of the most frequent bi-grams and tri-grams extracted from the text data. This visualization highlights several key topics, with phrases such as "red light," and "traffic light" standing out, indicating general discussions about traffic rules and road signs. Additionally, terms like "cross street" and "cross road" reflect the frequent discussions to how travelers discuss navigating or crossing the road, which directly relates to our topic. The word cloud also reveals more negative key phrases, such as "right way" (right of way, a very common issue in Vietnam where drivers take pedestrian space), "road rage," "drive wrong," and "traffic accid" (traffic accident), which suggest concerns about aggressive driving and road safety.')
 
-st.image("plots/combined_wordcloud.png", caption="Bigram and trigram wordcloud")
+st.image("plots/combined_wordcloud.png", caption="Bigram and trigram wordcloud", use_column_width=True)
 
 st.markdown('To further enhance the visualization of important key terms, distribution bar plots of the most frequent bi-grams and tri-grams have been generated. These plots provide a clearer and more precise view of the term frequencies, making it easier to identify significant phrases and patterns. Alongside general traffic-related topics, such as "right way" (right of way) and "traffic signal," the plots also highlight concerning negative topics like "run red light," "wrong side road," and "traffic accid" ("traffic accident"). These terms suggest a strong focus on dangerous driving behaviors and safety issues in Vietnamese\'s traffic.')
 
@@ -172,7 +166,7 @@ time_index = st.slider(
     step=timedelta(minutes=30),
 )
 time_label = '_'.join(str(time_index).split(':')[:-1])
-st.components.v1.html(open_file(f"plots/traffic_flow/traffic_map_period_{time_label if time_label != '20_30' else '20_00'}.html"), height=500)
+st.components.v1.html(open_file(f"plots/traffic_flow/traffic_map_period_{time_label if time_label != '20_30' else '20_00'}.html", center=False), height=500)
 
 st.markdown("")
 
@@ -180,7 +174,7 @@ st.markdown("""
 ### Traffic Accidents
 """)
 
-col1, col2 = st.columns(spec=[0.3, 0.7])
+col1, col2 = st.columns(spec=[0.4, 0.6])
 with col1:
     st.markdown("As traffic volume increases, traffic accidents become more frequent. Between 2013 and 2021, reported accident cases showed a general decline, reaching their lowest point in 2021. However, casualty numbers steadily decreased during this period, with a significant drop observed between 2019 and 2020. This reduction can be attributed to the strict social distancing measures implemented during the COVID-19 pandemic.")
     st.markdown("However, in the years following the pandemic (2022-2023), as restrictions eased, both the number of accidents and the casualty rate saw a significant rise, peaking in 2022.As social distancing restrictions were lifted, people returned to their regular commuting patterns. This sudden surge in vehicle numbers created more opportunities for accidents to occur.")
@@ -216,12 +210,14 @@ with col1:
 with col2:
     st.markdown(
         f"""
-        <iframe width="560" height="315" 
+        <center>
+        <iframe width="100%" height="315" 
         src="https://www.youtube.com/embed/Sy9v6U63Nd0" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
         </iframe>
+        </center>
         """,
         unsafe_allow_html=True
     )
@@ -252,7 +248,7 @@ st.markdown("The density map above represents the smoothed population density fo
 
 st.markdown("## The Human Factor")
 
-col1, col2 = st.columns(spec=[0.5, 0.4])
+col1, col2 = st.columns(spec=[0.5, 0.5])
 with col1: 
     st.markdown("""
     Last but not least, it is inevitable to acknowledge that ... Vietnamese drivers simply have poor driving norms. In the sentiment analysis section, we can see hints of this behavior from terms like "road rage", "running red lights", or taking pedestrains' "right of way". Many drivers, especially motorcyclists, often prioritize speed over safety, weaving through traffic, cutting off others, and ignoring traffic rules. 
@@ -268,12 +264,14 @@ with col1:
 with col2:
     st.markdown(
         f"""
-        <iframe width="560" height="315" 
+        <center>
+        <iframe width="100%" height="315" 
         src="https://www.youtube.com/embed/fm0cX7P6PSw" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
         </iframe>
+        </center>
         """,
         unsafe_allow_html=True
     )
