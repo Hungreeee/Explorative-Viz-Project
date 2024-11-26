@@ -226,7 +226,7 @@ with col2:
         unsafe_allow_html=True
     )
 
-st.markdown("Fortunately, in recent years, the production volume of motorcyles seem to have come to a slow down due to saturation. In the below plot, we can see that there is a large drop down after 2021 - the year of the pandemic. While this may have increased in 2023, this number is projected to decrease gradually until 2026.")
+st.markdown("Fortunately, in recent years, the production volume of motorcyles seem to have come to a slow down due to saturation. In the below plot, we can see that there is a large drop down after 2021 - the year of the post-pandemic period. While this may have increased in 2023, this number is projected to decrease gradually until 2026.")
 
 _, col1, _ = st.columns(spec=[0.01, 0.2, 0.01])
 
