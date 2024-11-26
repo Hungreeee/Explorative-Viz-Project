@@ -41,6 +41,26 @@ st.markdown(
         font-size: 20px !important; 
         font-weight: bold;
     }
+
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    #myBtn:hover {
+        background-color: #555;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -114,7 +134,7 @@ st.markdown("## Traffic Visualization")
 
 st.markdown("Now that we have gained some insight into how others perceive Vietnam's traffic, it's time to explore the situation firsthand. This section presents a visual representation of the traffic conditions, allowing us to better understand the challenges and patterns of traffic flow.")
 
-st.markdown("Below is a gallery showcasing images of traffic in Vietnam, capturing the diverse and often chaotic nature of daily commuting in the country. These images give a glimpse into the challenges faced daily by drivers and pedestrians. As one can observe, there are not much organization in how Vietnamese drives, car lanes and sidewalk are overwhelmed by the motorcyclists, drivers very often weave in front of others, etc. All contributes to this chaotic scene.")
+st.markdown("Below is a gallery showcasing images of traffic in Vietnam, capturing the diverse and often chaotic nature of daily commuting in the country. These images give a glimpse into the challenges faced daily by drivers and pedestrians. As one can observe, there are not much organization in how Vietnamese drives, car lanes and sidewalk overwhelmed by the motorcyclists, drivers weaving in front of others - all contributes to this chaotic scene.")
 
 test_items = [
     dict(
@@ -176,7 +196,7 @@ st.markdown("# Causes")
 
 st.markdown("## Motorbikes")
 
-st.markdown("Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam.")
+st.markdown("One of the major cause for traffic congestion, ironically, is the main transportation mode for millions of people in Vietnam: motorbikes. This is largely due to the affordability, maneuverability, and adaptability of motorbikes in the country's dense urban areas and narrow streets.  To give you a glimpse of the dominance of motorbikes, let us check the statistics for ourselves.")
 
 col1, col2 = st.columns(spec=[0.5, 0.5])
 with col1:
@@ -185,14 +205,13 @@ with col1:
 with col2:
     st.components.v1.html(open_file("plots/ownership_asia.html"), height=400)
 
-st.markdown("Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam.")
+st.markdown("More than 80\% of our transportation are private motorcycles, meaning that for every 5 vehicle you see on the street, 4 of them will be motorbikes. Among the Asian countries, this number places Vietnam in the second position in terms of highest ownership percentage, below Thailand. According to certain sources, this would account for over 65 million registered motorcylces, which is equivalent to two thirds of the population.")
 
 col1, col2 = st.columns(spec=[0.5, 0.5])
 with col1:
-    st.markdown("Okay, we get it")
-    st.markdown("Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam.")
-    st.markdown("Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam.")
-    st.markdown("Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems.")
+    st.markdown("*Okay, we get it. Vietnam does have a lot of motorbikes, but how does that affect the traffic?*")
+    st.markdown("The video on the right demonstrated how traffic jams are formed. To wrap up, unpredictable movements on the road (typically weaving) leads to a chain of slowing down for reactions where drivers must constantly adjust their speed and trajectory, disrupting the overall flow of traffic. This ripple effect creates congestion because even very small slowdowns can propagate backward through the traffic stream.")
+    st.markdown("In the video, we see how a single car creates this problem. Now, imagine the same situation with hundreds of motorbikes in the same space. While motorbikes take up less space individually, their sheer numbers overwhelm the road. More people on the road means a greater diversity of actions and intentions, leading to uncoordinated movements that disrupt traffic flow. This lack of synchronization between of hundreds of drivers is what creates heavy congestion in Vietnam.")
 
 with col2:
     st.markdown(
@@ -207,53 +226,46 @@ with col2:
         unsafe_allow_html=True
     )
 
-st.markdown("Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam.")
+st.markdown("Fortunately, in recent years, the production volume of motorcyles seem to have come to a slow down due to saturation. In the below plot, we can see that there is a large drop down after 2021 - the year of the pandemic. While this may have increased in 2023, this number is projected to decrease gradually until 2026.")
 
 _, col1, _ = st.columns(spec=[0.01, 0.2, 0.01])
 
 with col1:
     st.components.v1.html(open_file("plots/annual_volume.html"), height=400)
 
-st.markdown("Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam.")
+st.markdown("Even though production has slowed down and there's a hint that the numbers might eventually drop, the existing number of motorbikes, along with issues of traffic jams, pollution, and safety aren't going anywhere just yet. Fixing these problems will take more than just fewer motorbikes production - it will need better city planning, smarter transportation options, and a shift in how people move around every day.")
 
 ###
 
 st.markdown("## Population Density")
 
-st.markdown("Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam. Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam.")
+st.markdown("Population density in Vietnam, particularly in its large cities like Hanoi and Ho Chi Minh City, is another main factor contributing to the traffic congestion problem. These cities have rapidly grown over the years, with millions of people living in relatively small urban areas. As a result, the roads, which were not initially designed to handle such dense populations, are often overcrowded.")
 
 _, col1, _ = st.columns(spec=[0.25, 0.45, 0.25])
 
 with col1:
     st.components.v1.html(open_file("plots/population_density.html"), height=800)
 
-st.markdown("Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam. Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam.")
+st.markdown("The density map above represents the smoothed population density for each area in Vietnam. It is possible to observe the two extremely high density regions are focused around Hanoi and Ho Chi Minh city. With tens of millions people cramming into one space, and each with the need to commute everyday, it is unavoidable that the cities fail to keep up. More people not only creates the overcrowded situation in the road, but also creates more complex traffic patterns. Additionally, this crowded nature of the cities makes it extremely difficult to implement effective public transportation systems or expand infrastructure quickly enough to keep up with the growth.")
 
 ###
 
 st.markdown("## The Human Factor")
 
-st.markdown("### Poor driving norms")
-
 col1, col2 = st.columns(spec=[0.5, 0.4])
 with col1: 
     st.markdown("""
-    Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam.
+    Last but not least, it is inevitable to acknowledge that ... Vietnamese drivers simply have poor driving norms. In the sentiment analysis section, we can see hints of this behavior from terms like "road rage", "running red lights", or taking pedestrains' "right of way". Many drivers, especially motorcyclists, often prioritize speed over safety, weaving through traffic, cutting off others, and ignoring traffic rules. 
+    """)
+    st.markdown("""
+    This reckless behavior is fueled by the way traffic is structured in Vietnam. For example, it's common to see motorcyclists darting between lanes, swerving around cars, or even going against traffic in narrow spaces, all in an attempt to avoid getting stuck in a jam. This kind of driving culture has somewhat been normalized and overlooked by both the public.
+    """)
 
-    This project will use visual tools to demonstrate the traffic situation as well as its characteristics - what really makes the traffic chaotic? This will help the audience to understand the key issues, sources of problem, and the nature of the traffic in Vietnam. 
-                
-    Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. As urbanization happens so quickly, the infrastructures are struggling to handle the increased traffic. This in turn causes traffic congestion, which can seem to be very chaotic and even scary to many outsiders travelling in Vietnam. This project will use visual tools to demonstrate the traffic situation as well as its characteristics - what really makes the traffic chaotic? This will help the audience to understand the key issues, sources of problem, and the nature of the traffic in Vietnam. Vietnam's cities are growing fast, and this rapid expansion is putting a huge strain on the country's road systems. 
+    st.markdown("""
+    Another factor is the lack of comprehensive road safety education. There's little emphasis on defensive driving or understanding the long-term consequences of reckless behavior. In busy urban areas, this results in people feeling as though they have to be aggressive just to keep moving, especially when they see others doing the same. This "everyone-for-themselves" mentality only intensifies the chaos, creating a cycle where bad habits perpetuate themselves, making it difficult to change driving culture.
     """)
 
 with col2:
-    st.image("images/Traffic-Vietnam.jpg", use_column_width=True, caption="Average traffic in Saigon, Vietnam")
-
-st.markdown("### Road Familiarity and Collective Understanding")
-
-st.markdown(" The traffic feels chaotic due to the sheer number of vehicles and the seeming disregard for formal rules. Many Vietnamese drivers are highly familiar with local roads and adopt riskier driving behaviors, such as weaving through gaps or speeding through intersections. Drivers also have high collective understanding to understand how the others are driving and adjust their movement accordingly. This of course introduces a level of unpredictability for tourists or non-local drivers unfamiliar with these patterns, but in fact is “organized” in some sort of way.")
-
-_, col1, _ = st.columns(spec=[0.3, 0.4, 0.3])
-with col1: 
     st.markdown(
         f"""
         <iframe width="560" height="315" 
@@ -266,8 +278,18 @@ with col1:
         unsafe_allow_html=True
     )
 
-st.markdown(" The traffic feels chaotic due to the sheer number of vehicles and the seeming disregard for formal rules. Many Vietnamese drivers are highly familiar with local roads and adopt riskier driving behaviors, such as weaving through gaps or speeding through intersections. Drivers also have high collective understanding to understand how the others are driving and adjust their movement accordingly. This of course introduces a level of unpredictability for tourists or non-local drivers unfamiliar with these patterns, but in fact is “organized” in some sort of way.")
+st.markdown("""
+Furthermore, the heavy reliance on motorbikes, which are seen as more flexible to maneuver, encourages even more risk-taking behavior. Motorbikes are easier to weave through traffic, which often leads to drivers squeeziethrough gaps that are too small or accelerating past red lights, all in an effort to save time. 
+""")
 
 st.markdown("# Conclusion")
 
-st.markdown(" The traffic feels chaotic due to the sheer number of vehicles and the seeming disregard for formal rules. Many Vietnamese drivers are highly familiar with local roads and adopt riskier driving behaviors, such as weaving through gaps or speeding through intersections. Drivers also have high collective understanding to understand how the others are driving and adjust their movement accordingly. This of course introduces a level of unpredictability for tourists or non-local drivers unfamiliar with these patterns, but in fact is “organized” in some sort of way.")
+st.markdown("""
+In conclusion, traffic congestion in Vietnam is a major problem caused by several factors working together. The dominance of motorbikes is the most obvious one, with so many of them filling the streets. While motorbikes are smaller and take up less space, there are simply too many, which leads to overcrowding. On top of that, the high population density in cities like Hanoi and Ho Chi Minh City makes the situation even worse. Infrastrucures cannot keep up with level of traffic, and there's not enough space for everyone to move efficiently.
+
+However, the human factor plays a big role in the chaos. Many drivers, especially motorcyclists, don't follow traffic rules and often act recklessly—speeding, running red lights, and weaving through traffic. This kind of behavior is often seen as normal in a country where roads are overcrowded, and it leads to even more congestion and accidents. People are just trying to get where they need to go as quickly as possible, even if it means breaking the rules.
+            
+This chaotic traffic environment can be especially intimidating for foreigners. Coming from places where traffic are more organized, it can be scary for them to navigate the streets, with motorbikes constantly zipping by in unpredictable ways. The lack of clear lanes, the constant honking, and the rush to get ahead can make even simple tasks like crossing the street feel dangerous. [It's not uncommon for newcomers to feel overwhelmed by the unpredictability and volume of the traffic](https://www.reddit.com/r/VietNam/comments/18dn65i/how_was_your_street_crossing_experience_in_vi%E1%BB%87t/).
+
+While the slowdown in motorbike production since the pandemic might suggest a small change, the real solution goes beyond just reducing the number of motorbikes. Better traffic management, more public transportation options, and stricter enforcement of traffic laws could help, but changing driving habits is also key. In the end, improving road safety and reducing traffic jams will require a mix of better infrastructure, stronger law enforcement, and a shift in the driving culture. Only then can Vietnam hope to tackle its traffic problems and make its streets safer for everyone. 
+""")
