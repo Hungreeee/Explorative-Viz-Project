@@ -1,3 +1,17 @@
+streamlit
 streamlit-carousel
 streamlit-modal
 pandas
+plotly
+nltk
+praw
+matplotlib
+wordcloud
+seaborn
+branca
+numpy
+scikit-learn
+folium
+h3-py
+shapely
+geojson
