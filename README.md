@@ -14,3 +14,8 @@ Then, install the packages required for the project:
 ```
 pip install -r requirements.txt
 ```
+
+To start the website locally:
+```
+streamlit run app.py
+```
