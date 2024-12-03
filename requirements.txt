@@ -12,6 +12,6 @@ branca
 numpy
 scikit-learn
 folium
-h3-py
+h3
 shapely
 geojson
