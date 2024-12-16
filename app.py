@@ -69,7 +69,7 @@ with col1:
     """)
 
 with col2:
-    st.image("images/saigon-traffic-jam.jpg", use_column_width=True, caption="Average traffic in Saigon, Vietnam")
+    st.image("images/saigon-traffic-jam.jpg", use_container_width=True, caption="Average traffic in Saigon, Vietnam")
 
 ###
 
@@ -85,7 +85,7 @@ st.markdown("The processed text data is then tokenized, breaking the text into i
 
 st.markdown('A word cloud has been created based on the aggregated list of the most frequent bi-grams and tri-grams extracted from the text data. This visualization highlights several key topics, with phrases such as "red light," and "traffic light" standing out, indicating general discussions about traffic rules and road signs. Additionally, terms like "cross street" and "cross road" reflect the frequent discussions to how travelers discuss navigating or crossing the road, which directly relates to our topic. The word cloud also reveals more negative key phrases, such as "right way" (right of way, a very common issue in Vietnam where drivers take pedestrian space), "road rage," "drive wrong," and "traffic accid" (traffic accident), which suggest concerns about aggressive driving and road safety.')
 
-st.image("plots/combined_wordcloud.png", caption="Bigram and trigram wordcloud", use_column_width=True)
+st.image("plots/combined_wordcloud.png", caption="Bigram and trigram wordcloud", use_container_width=True)
 
 st.markdown('To further enhance the visualization of important key terms, distribution bar plots of the most frequent bi-grams and tri-grams have been generated. These plots provide a clearer and more precise view of the term frequencies, making it easier to identify significant phrases and patterns. Alongside general traffic-related topics, such as "right way" (right of way) and "traffic signal," the plots also highlight concerning negative topics like "run red light," "wrong side road," and "traffic accid" ("traffic accident"). These terms suggest a strong focus on dangerous driving behaviors and safety issues in Vietnamese\'s traffic.')
 
